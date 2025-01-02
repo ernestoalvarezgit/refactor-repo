@@ -1,5 +1,3 @@
-# refactor-repo
-exam from digitaltolk
 IMPROVEMENTS on the code
 
 1) Readability and PSR-2 standard compliance specially on conditions and spacings 
@@ -17,3 +15,14 @@ deprecated to future proof the code
 12) used some data preparer functions as well and modularized logger 
 13) Created a notification service and injected the dependency on the bookingrepository constructor and used it on the functions that are using the notifications .
 14) on cancel job i did the todo for checking the 24 hrs diff on a separate function 
+
+TEST CASE explanation 
+
+just run php artisan test
+
+and things that it will test
+
+1) willExpireAt method in TeHelper Class it calculating an expiration time based on the difference between two given times: due_time and created_at. You'll need to write tests to ensure it calculates the time correctly in all scenarios following the logic of it 
+
+2) User Repo Test it will assert db transactions 
+assertDatabaseHas to verifty if the data is correctly inserted or updated in the DB, factory usage as well , it is going to mock some dependencies like create or Update on models
